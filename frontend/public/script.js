@@ -12,7 +12,9 @@ window.addEventListener("load", loadEvent);
 
 const headerComponent = function(title){
     return `
-    <header>${title}</header>
+    <header>
+    <h1>${title}</h1>
+    </header>
     `
 }
 
@@ -40,7 +42,7 @@ function loadEvent(){
     //rootElement.insertAdjacentHTML("beforeend", beerCardComponent(beerName, beerCompany,beerType));
     //console.log(beers);
 
-   // rootElement.insertAdjacentHTML("beforeend", beerCardComponent(beerName1, beerCompany1,beerType1));
+    //rootElement.insertAdjacentHTML("beforeend", beerCardComponent(beerName1, beerCompany1,beerType1));
    
     //rootElement.insertAdjacentHTML("beforeend", beerCardComponent(beerCards[2].title, beerCards[2].sub,beerCards[2].text));
 
@@ -61,11 +63,14 @@ function loadEvent(){
 
 const beerCardComponent = function (beerName, beerCompany, beerType) {
     return `
-     <div class='card' onclick="onClick(this)">
-        <div class="beer-name">${beerName}</div>
-        <div class="beer-company">${beerCompany}</div>
-        <div class="beer-type">${beerType}</div>
-        </div>  
+     <section class='card' onclick="onClick(this)">
+        <h1 class="wbeer-name">${beerName}</h1>
+        <h2 class="wbeer-company" onclick="onClick(this); event.stopPropagation();">${beerCompany}</h2>
+        <h3 class="wbeer-type">${beerType}</h3>
+        <button onclick="event.stopPropagation()">
+        Buy
+        </button>
+        </section>  
           `
 }
 
