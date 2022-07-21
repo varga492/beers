@@ -7,7 +7,21 @@
 //console.log(beers.cards[5])
 
 
+
 window.addEventListener("load", loadEvent);
+
+const headerComponent = function(title){
+    return `
+    <header>${title}</header>
+    `
+}
+
+const footerComponent = function(company){
+    return `
+    <footer>${company}</footer>
+    `
+}
+
 
 function loadEvent(){
 
@@ -30,13 +44,15 @@ function loadEvent(){
    
     //rootElement.insertAdjacentHTML("beforeend", beerCardComponent(beerCards[2].title, beerCards[2].sub,beerCards[2].text));
 
-
+    rootElement.insertAdjacentHTML("beforebegin", headerComponent(beers.logo))
     
 
     for (const beerCard of beerCards) {
         rootElement.insertAdjacentHTML("beforeend", beerCardComponent(beerCard.title, beerCard.sub,beerCard.text));
         console.log(beerCard);
     }
+
+    rootElement.insertAdjacentHTML("afterend", footerComponent("Dreher"))
 
 }
 
@@ -61,3 +77,4 @@ function onClick (e) {
     e.classList.add('green');
     }  
 }
+
