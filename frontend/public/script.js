@@ -83,3 +83,13 @@ function onClick (e) {
     }  
 }
 
+
+function eer (beers){
+    let month =[];
+    for (const beer of beers) {
+        month.push(beer.title)
+    }
+    console.log(month)
+}
+
+eer(beers.cards)
